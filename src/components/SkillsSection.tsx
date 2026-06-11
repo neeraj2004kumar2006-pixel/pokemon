@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ParticleText } from './ParticleText';
 
 const skills = [
   { name: 'React', level: 95 },
@@ -28,7 +29,7 @@ export const SkillsSection = () => {
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            Tools & <span className="text-gradient">Technologies</span>
+            Tools & <ParticleText text="Technologies" />
           </h2>
           <p className="text-lg text-zinc-400">
             The tech stack I use to bring ideas to life.

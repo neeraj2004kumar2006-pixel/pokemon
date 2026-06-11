@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, Mail, Code2, Smartphone } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { ParticleText } from './ParticleText';
 
 export const HeroSection = () => {
   const mouseX = useMotionValue(0);
@@ -67,7 +68,7 @@ export const HeroSection = () => {
             </motion.div>
 
             <motion.h1 variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } } }} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight">
-              Hi, I'm <span className="text-gradient">Neeraj</span>.<br/> I build apps.
+              Hi, I'm <ParticleText text="Neeraj" />.<br/> I build apps.
             </motion.h1>
             
             <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } } }} className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
