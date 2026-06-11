@@ -23,21 +23,20 @@ export const HeroSection = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
               </span>
-              Available for new projects
+              App Developer
             </div>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight">
-              Building <span className="text-gradient">digital experiences</span> that matter.
+              Hi, I'm <span className="text-gradient">Neeraj</span>.<br/> I build apps.
             </h1>
             
             <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              I'm a full-stack developer specializing in building exceptional digital experiences. 
-              Currently, I'm focused on building accessible, human-centered products.
+              Welcome to my personal space! I love turning ideas into reality by building clean and user-friendly applications. Check out my latest work below.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-12">
-              <a href="#projects" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-zinc-950 font-semibold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
-                View Projects <ArrowRight className="w-5 h-5" />
+              <a href="#apps" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-zinc-950 font-semibold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
+                View My Apps <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#contact" className="w-full sm:w-auto px-8 py-4 rounded-full glass hover:bg-white/10 text-white font-medium transition-colors flex items-center justify-center gap-2">
                 Contact Me
@@ -75,23 +74,14 @@ export const HeroSection = () => {
                 />
               </div>
               
-              {/* Floating badges */}
+              {/* Floating badge */}
               <motion.div 
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -left-8 top-1/4 px-6 py-4 rounded-2xl glass-card flex flex-col gap-1"
               >
-                <span className="text-3xl font-bold text-white">5+</span>
-                <span className="text-xs text-zinc-400 uppercase tracking-wider">Years Exp</span>
-              </motion.div>
-
-              <motion.div 
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-8 bottom-1/4 px-6 py-4 rounded-2xl glass-card flex flex-col gap-1"
-              >
-                <span className="text-3xl font-bold text-white">50+</span>
-                <span className="text-xs text-zinc-400 uppercase tracking-wider">Projects</span>
+                <span className="text-2xl font-bold text-white">My Apps</span>
+                <span className="text-xs text-zinc-400 uppercase tracking-wider">Showcase</span>
               </motion.div>
             </div>
           </motion.div>
