@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { ParticleText } from './ParticleText';
 
 const websites = [
   {
@@ -25,13 +24,9 @@ export const WebsitesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="mb-6 inline-block">
-            <ParticleText>
-              <h2 className="text-3xl md:text-5xl font-bold text-white m-0">
-                My <span className="text-gradient">Websites</span>
-              </h2>
-            </ParticleText>
-          </div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            My <span className="text-gradient">Websites</span>
+          </h2>
           <p className="text-lg text-zinc-400">
             A showcase of the responsive, modern, and interactive web applications I have built.
           </p>

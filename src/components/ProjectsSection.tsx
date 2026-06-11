@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone } from 'lucide-react';
-import { ParticleText } from './ParticleText';
 import { FaGooglePlay } from 'react-icons/fa';
 
 const apps = [
@@ -37,13 +36,9 @@ export const ProjectsSection = () => {
           <div className="inline-flex items-center justify-center p-3 glass-card rounded-2xl mb-6">
             <Smartphone className="w-8 h-8 text-brand-primary" />
           </div>
-          <div className="mb-6 inline-block">
-            <ParticleText>
-              <h2 className="text-3xl md:text-5xl font-bold text-white m-0">
-                My <span className="text-gradient">Apps</span>
-              </h2>
-            </ParticleText>
-          </div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            My <span className="text-gradient">Apps</span>
+          </h2>
           <p className="text-lg text-zinc-400">
             Check out the applications I have built and published on the Google Play Store.
           </p>
