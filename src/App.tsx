@@ -9,16 +9,21 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-50 font-inter selection:bg-brand-primary/30">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 font-inter selection:bg-brand-primary/30 relative">
+      {/* Global Grain Overlay - Static and highly optimized */}
+      <div className="fixed inset-0 z-50 pointer-events-none opacity-[0.03] bg-noise mix-blend-overlay"></div>
+      
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

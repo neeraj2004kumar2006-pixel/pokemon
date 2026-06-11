@@ -6,45 +6,66 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden" id="home">
-      {/* Background gradients */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary/20 rounded-full blur-[120px] animate-blob" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-secondary/20 rounded-full blur-[120px] animate-blob" style={{ animationDelay: '2s' }} />
+      {/* Optimized soft static gradients instead of laggy animated blobs */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-brand-primary/10 via-zinc-950 to-zinc-950 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-brand-secondary/10 via-zinc-950/0 to-zinc-950/0 pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15 }
+              }
+            }}
             className="flex-1 text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-brand-primary text-sm font-medium mb-8">
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } } }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-brand-primary text-sm font-medium mb-8"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
               </span>
               App Developer
-            </div>
+            </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight">
+            <motion.h1 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } } }}
+              className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight"
+            >
               Hi, I'm <span className="text-gradient">Neeraj</span>.<br/> I build apps.
-            </h1>
+            </motion.h1>
             
-            <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <motion.p 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } } }}
+              className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            >
               Welcome to my personal space! I love turning ideas into reality by building clean and user-friendly applications. Check out my latest work below.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-12">
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } } }}
+              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-12"
+            >
               <a href="#apps" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-zinc-950 font-semibold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
                 View My Apps <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#contact" className="w-full sm:w-auto px-8 py-4 rounded-full glass hover:bg-white/10 text-white font-medium transition-colors flex items-center justify-center gap-2">
                 Contact Me
               </a>
-            </div>
+            </motion.div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-5 justify-center lg:justify-start text-zinc-400">
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } } }}
+              className="flex items-center gap-5 justify-center lg:justify-start text-zinc-400"
+            >
               <a href="#" className="p-3 rounded-full glass-card hover:text-white hover:-translate-y-1 transition-all">
                 <FaGithub className="w-5 h-5" />
               </a>
@@ -54,7 +75,7 @@ export const HeroSection = () => {
               <a href="#" className="p-3 rounded-full glass-card hover:text-white hover:-translate-y-1 transition-all">
                 <Mail className="w-5 h-5" />
               </a>
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.div 
