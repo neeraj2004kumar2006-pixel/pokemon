@@ -28,10 +28,7 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="p-2 bg-brand-primary/10 rounded-lg group-hover:bg-brand-primary/20 transition-colors">
-            <Code2 className="w-6 h-6 text-brand-primary" />
-          </div>
+        <a href="#" className="flex items-center group">
           <span className="text-xl font-bold tracking-tight text-white">Pokemon</span>
         </a>
 

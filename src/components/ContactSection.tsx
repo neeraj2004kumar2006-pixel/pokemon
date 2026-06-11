@@ -10,17 +10,13 @@ export const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormState({ name: '', email: '', message: '' });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+    const subject = encodeURIComponent(`New Contact Message from ${formState.name}`);
+    const body = encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`);
+    
+    window.location.href = `mailto:neerajpoonia27@gmail.com?subject=${subject}&body=${body}`;
+    
+    setFormState({ name: '', email: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -67,20 +63,8 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-zinc-400 mb-1">Email</p>
-                    <a href="mailto:hello@pokemon.dev" className="text-white font-medium hover:text-brand-primary transition-colors">
-                      hello@pokemon.dev
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-brand-secondary/10 text-brand-secondary">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-zinc-400 mb-1">Phone</p>
-                    <a href="tel:+1234567890" className="text-white font-medium hover:text-brand-secondary transition-colors">
-                      +1 (234) 567-890
+                    <a href="mailto:neerajpoonia27@gmail.com" className="text-white font-medium hover:text-brand-primary transition-colors">
+                      neerajpoonia27@gmail.com
                     </a>
                   </div>
                 </div>
@@ -91,7 +75,7 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-zinc-400 mb-1">Location</p>
-                    <p className="text-white font-medium">San Francisco, CA</p>
+                    <p className="text-white font-medium">Bikaner, India</p>
                   </div>
                 </div>
               </div>
@@ -167,20 +151,9 @@ export const ContactSection = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full py-4 rounded-xl bg-white text-zinc-950 font-bold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full py-4 rounded-xl bg-white text-zinc-950 font-bold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2"
               >
-                {isSubmitting ? (
-                  <div className="w-6 h-6 border-2 border-zinc-950 border-t-transparent rounded-full animate-spin" />
-                ) : isSubmitted ? (
-                  <>
-                    <CheckCircle className="w-5 h-5 text-emerald-600" /> Message Sent
-                  </>
-                ) : (
-                  <>
-                    Send Message <Send className="w-4 h-4 ml-1" />
-                  </>
-                )}
+                Send Message <Send className="w-4 h-4 ml-1" />
               </button>
             </form>
           </motion.div>
