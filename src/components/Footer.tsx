@@ -21,12 +21,16 @@ export const Footer = () => {
           </div>
 
           <nav className="flex flex-wrap justify-center gap-6 md:gap-8">
-            {['About', 'Apps', 'Contact'].map((item) => (
+            {['About', 'Apps', 'Websites', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
                 className="text-zinc-400 hover:text-white text-sm font-medium transition-colors"
               >
+                {item}
+              </a>
+            ))}
+          </nav>
                 {item}
               </a>
             ))}
