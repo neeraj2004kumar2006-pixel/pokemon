@@ -7,7 +7,7 @@ const apps = [
   {
     id: 1,
     title: 'IQ Notes',
-    image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=2070&auto=format&fit=crop',
+    image: '/iq-notes.png',
     description: 'A smart, intuitive note-taking application designed to help you capture your thoughts, organize your ideas, and boost your daily productivity effortlessly.',
     tags: ['Flutter', 'Android', 'Productivity'],
     demoUrl: 'https://play.google.com/store/apps/details?id=com.iqnotes.iq_notes'
@@ -15,7 +15,7 @@ const apps = [
   {
     id: 2,
     title: 'Coin Tapper',
-    image: 'https://images.unsplash.com/photo-1610992015732-2449b06272b1?q=80&w=1935&auto=format&fit=crop',
+    image: '/coin-tapper.png',
     description: 'An addictive and fun tapping game where you collect coins, beat your high scores, and enjoy endless entertainment. Simple to learn, hard to master!',
     tags: ['Flutter', 'Android', 'Game'],
     demoUrl: 'https://play.google.com/store/apps/details?id=com.me.cointapper'

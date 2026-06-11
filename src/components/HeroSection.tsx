@@ -66,11 +66,11 @@ export const HeroSection = () => {
             <div className="relative w-full max-w-lg mx-auto aspect-square">
               {/* Decorative elements behind image */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-brand-primary/30 to-brand-secondary/30 blur-2xl" />
-              <div className="absolute inset-0 rounded-3xl border border-white/10 glass-card overflow-hidden">
+              <div className="absolute inset-0 rounded-3xl border border-white/10 glass-card flex items-center justify-center overflow-hidden p-12">
                 <img 
-                  src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Developer workspace" 
-                  className="w-full h-full object-cover opacity-80 mix-blend-overlay"
+                  src="/iq-notes.png" 
+                  alt="IQ Notes" 
+                  className="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
                 />
               </div>
               
@@ -80,8 +80,8 @@ export const HeroSection = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -left-8 top-1/4 px-6 py-4 rounded-2xl glass-card flex flex-col gap-1"
               >
-                <span className="text-2xl font-bold text-white">My Apps</span>
-                <span className="text-xs text-zinc-400 uppercase tracking-wider">Showcase</span>
+                <span className="text-2xl font-bold text-white">IQ Notes</span>
+                <span className="text-xs text-zinc-400 uppercase tracking-wider">Featured App</span>
               </motion.div>
             </div>
           </motion.div>
