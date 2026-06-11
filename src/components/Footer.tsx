@@ -31,10 +31,6 @@ export const Footer = () => {
               </a>
             ))}
           </nav>
-                {item}
-              </a>
-            ))}
-          </nav>
 
           <button 
             onClick={scrollToTop}
