@@ -55,12 +55,12 @@ export const ProjectsSection = () => {
               whileHover={{ y: -10 }}
               className="glass-card rounded-3xl overflow-hidden group flex flex-col"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <div className="absolute inset-0 bg-brand-primary/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10" />
+              <div className="relative h-48 md:h-64 overflow-hidden bg-brand-primary/5 p-8 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 z-10" />
                 <img 
                   src={app.image} 
-                  alt={app.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  alt={app.title}
+                  className="w-32 h-32 object-contain rounded-2xl shadow-2xl group-hover:scale-110 transition-transform duration-700 z-0"
                 />
               </div>
 
