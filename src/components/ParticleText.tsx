@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import html2canvas from 'html2canvas';
+import * as htmlToImage from 'html-to-image';
 
 interface ParticleTextProps {
   children: React.ReactNode;
@@ -24,16 +24,19 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
     const initCanvas = async () => {
       if (!isActive) return;
       
-      // Wait a moment for fonts and any layout shifts to settle
-      await new Promise(r => setTimeout(r, 800));
+      // Wait 1.5 seconds to ensure Framer Motion animations have completely finished
+      // before capturing the DOM, otherwise we might capture a 0-opacity element!
+      await new Promise(r => setTimeout(r, 1500));
       if (!isActive) return;
 
       try {
         const dpr = window.devicePixelRatio || 1;
-        const renderedCanvas = await html2canvas(container, {
-          backgroundColor: null,
-          scale: dpr,
-          logging: false
+        
+        // html-to-image uses SVG foreignObject, which flawlessly captures CSS text-gradients
+        const renderedCanvas = await htmlToImage.toCanvas(container, {
+          backgroundColor: 'rgba(0,0,0,0)',
+          pixelRatio: dpr,
+          skipFonts: false
         });
 
         if (!isActive) return;
@@ -47,7 +50,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
         canvas.width = width;
         canvas.height = height;
         
-        // Match the container's layout size perfectly
+        // Match the container's physical layout size
         canvas.style.width = `${width / dpr}px`;
         canvas.style.height = `${height / dpr}px`;
 
@@ -58,7 +61,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
         const data = imageData.data;
         particles = [];
 
-        // Extremely fine grains for high density shatter
+        // Dense grains for perfect recreation of the DOM text
         const step = Math.max(1, Math.round(dpr)); 
         
         for (let y = 0; y < height; y += step) {
@@ -66,7 +69,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
             const index = (y * width + x) * 4;
             const alpha = data[index + 3];
             
-            // Capture any visible pixel, allowing mixed colors and gradients
+            // Only capture non-transparent pixels
             if (alpha > 10) { 
               particles.push({
                 x: x,
@@ -84,6 +87,9 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
         if (particles.length > 0) {
           setIsReady(true);
           animate();
+        } else {
+          // If capture was blank (maybe framer motion delayed), retry once
+          setTimeout(initCanvas, 1000);
         }
       } catch (e) {
         console.error("Particle effect failed to initialize", e);
@@ -104,7 +110,6 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
         
         if (localHoverState) {
            allSettled = false;
-           // Fine particles vibrate and drift rapidly
            p.vx += (Math.random() - 0.5) * 3;
            p.vy += (Math.random() - 0.5) * 3;
            p.vx *= 0.93;
@@ -112,7 +117,6 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
            p.x += p.vx;
            p.y += p.vy;
         } else {
-           // Spring back
            p.vx += (p.originX - p.x) * 0.15;
            p.vy += (p.originY - p.y) * 0.15;
            p.vx *= 0.8;
@@ -126,11 +130,10 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
         }
 
         ctx.fillStyle = p.color;
-        // Super fine particles
+        // Draw exact 1px particle (scaled by DPR)
         ctx.fillRect(p.x, p.y, Math.max(1, window.devicePixelRatio * 0.8), Math.max(1, window.devicePixelRatio * 0.8));
       }
       
-      // Manage DOM visibility based on animation state
       if (!localHoverState && allSettled) {
         if (canvas.style.opacity !== '0') {
           canvas.style.opacity = '0';
@@ -146,7 +149,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    // Initialize after a delay
+    // Give browser time to parse fonts and layout
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(initCanvas);
     } else {
@@ -157,8 +160,8 @@ export const ParticleText: React.FC<ParticleTextProps> = ({ children, className 
       if (!isReady) return;
       localHoverState = true;
       particles.forEach(p => {
-        p.vx = (Math.random() - 0.5) * 30;
-        p.vy = (Math.random() - 0.5) * 30;
+        p.vx = (Math.random() - 0.5) * 35; // Explosive scatter
+        p.vy = (Math.random() - 0.5) * 35;
       });
     };
     
