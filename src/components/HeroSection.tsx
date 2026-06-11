@@ -97,14 +97,17 @@ export const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="flex-1 relative hidden lg:block h-[600px] w-full"
           >
-            {/* Center Main Element */}
+            {/* Floating App 3: Portfolio Site (Replaced the Code2 Icon) */}
             <motion.div style={{ x: x1, y: y1 }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-48 h-48 rounded-3xl glass-card flex items-center justify-center border-brand-primary/20 bg-brand-primary/5 relative">
-                <Code2 className="w-20 h-20 text-brand-primary" />
-                <div className="absolute -bottom-4 -right-4 px-4 py-2 bg-blue-500 text-white text-xs font-bold rounded-full shadow-lg shadow-blue-500/20 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-white rounded-full animate-ping" />
-                  Live Editing
+              <div className="p-4 rounded-2xl glass-card border-brand-primary/20 flex flex-col items-center gap-3 hover:scale-110 transition-transform">
+                <img src="/portfolio-logo.png" alt="Pokemon Portfolio" className="w-16 h-16 rounded-xl object-cover shadow-lg" />
+                <div className="text-center">
+                  <h3 className="text-white font-bold text-sm">Pokemon Portfolio</h3>
+                  <p className="text-brand-primary text-xs font-medium">React + Vite Web App</p>
                 </div>
+              </div>
+              <div className="absolute -top-4 -right-4 px-3 py-1 bg-brand-primary text-white text-xs font-bold rounded-full shadow-lg shadow-brand-primary/20 transform rotate-6">
+                Neeraj
               </div>
             </motion.div>
 

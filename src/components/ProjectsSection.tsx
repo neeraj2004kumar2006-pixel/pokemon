@@ -19,6 +19,14 @@ const apps = [
     description: 'An addictive and fun tapping game where you collect coins, beat your high scores, and enjoy endless entertainment. Simple to learn, hard to master!',
     tags: ['Flutter', 'Android', 'Game'],
     demoUrl: 'https://play.google.com/store/apps/details?id=com.me.cointapper'
+  },
+  {
+    id: 3,
+    title: 'Pokemon Portfolio',
+    image: '/portfolio-logo.png',
+    description: 'A premium, highly interactive personal portfolio website featuring 3D mouse parallax effects, glassmorphism, and a custom smooth-scrolling architecture.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+    demoUrl: 'https://github.com/neeraj2004kumar2006-pixel/pokemon'
   }
 ];
 

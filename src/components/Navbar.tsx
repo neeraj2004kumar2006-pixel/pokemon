@@ -28,8 +28,13 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center group">
-          <span className="text-xl font-bold tracking-tight text-white">Pokemon</span>
+        <a href="#" className="flex items-center gap-3 group">
+          <img 
+            src="/portfolio-logo.png" 
+            alt="Pokemon Logo" 
+            className="w-10 h-10 rounded-xl object-cover shadow-lg shadow-brand-primary/20 group-hover:scale-110 transition-transform duration-300"
+          />
+          <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors">Pokemon</span>
         </a>
 
         {/* Desktop Nav */}
