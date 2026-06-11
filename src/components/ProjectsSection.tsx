@@ -1,26 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Smartphone } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
+import { Smartphone } from 'lucide-react';
+import { FaGooglePlay } from 'react-icons/fa';
 
 const apps = [
   {
     id: 1,
-    title: 'My First App',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop',
-    description: 'This is a placeholder for your first app. Describe what it does, who it is for, and why you built it. It features a clean UI and smooth performance.',
-    tags: ['React Native', 'Firebase', 'Redux'],
-    demoUrl: '#',
-    githubUrl: '#'
+    title: 'IQ Notes',
+    image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=2070&auto=format&fit=crop',
+    description: 'A smart, intuitive note-taking application designed to help you capture your thoughts, organize your ideas, and boost your daily productivity effortlessly.',
+    tags: ['Flutter', 'Android', 'Productivity'],
+    demoUrl: 'https://play.google.com/store/apps/details?id=com.iqnotes.iq_notes'
   },
   {
     id: 2,
-    title: 'My Second App',
-    image: 'https://images.unsplash.com/photo-1526506114642-990a42398b16?q=80&w=1974&auto=format&fit=crop',
-    description: 'This is a placeholder for your second app. You can easily edit these details in the code to showcase your actual work and provide links to the app store or GitHub.',
-    tags: ['Flutter', 'Node.js', 'MongoDB'],
-    demoUrl: '#',
-    githubUrl: '#'
+    title: 'Coin Tapper',
+    image: 'https://images.unsplash.com/photo-1610992015732-2449b06272b1?q=80&w=1935&auto=format&fit=crop',
+    description: 'An addictive and fun tapping game where you collect coins, beat your high scores, and enjoy endless entertainment. Simple to learn, hard to master!',
+    tags: ['Flutter', 'Android', 'Game'],
+    demoUrl: 'https://play.google.com/store/apps/details?id=com.me.cointapper'
   }
 ];
 
@@ -42,7 +40,7 @@ export const ProjectsSection = () => {
             My <span className="text-gradient">Apps</span>
           </h2>
           <p className="text-lg text-zinc-400">
-            Check out the applications I have built. I handle everything from design to deployment.
+            Check out the applications I have built and published on the Google Play Store.
           </p>
         </motion.div>
 
@@ -83,11 +81,8 @@ export const ProjectsSection = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-white/5">
-                  <a href={app.demoUrl} className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
-                    <ExternalLink className="w-4 h-4" /> View App
-                  </a>
-                  <a href={app.githubUrl} className="p-3 rounded-xl glass hover:bg-white/10 text-white transition-colors" aria-label="View Source">
-                    <FaGithub className="w-5 h-5" />
+                  <a href={app.demoUrl} target="_blank" rel="noreferrer" className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
+                    <FaGooglePlay className="w-4 h-4" /> Get on Play Store
                   </a>
                 </div>
               </div>
