@@ -37,9 +37,13 @@ export const ProjectsSection = () => {
           <div className="inline-flex items-center justify-center p-3 glass-card rounded-2xl mb-6">
             <Smartphone className="w-8 h-8 text-brand-primary" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            My <ParticleText text="Apps" />
-          </h2>
+          <div className="mb-6 inline-block">
+            <ParticleText>
+              <h2 className="text-3xl md:text-5xl font-bold text-white m-0">
+                My <span className="text-gradient">Apps</span>
+              </h2>
+            </ParticleText>
+          </div>
           <p className="text-lg text-zinc-400">
             Check out the applications I have built and published on the Google Play Store.
           </p>

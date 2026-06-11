@@ -28,9 +28,13 @@ export const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            Tools & <ParticleText text="Technologies" />
-          </h2>
+          <div className="mb-6 inline-block">
+            <ParticleText>
+              <h2 className="text-3xl md:text-5xl font-bold text-white m-0">
+                Tools & <span className="text-gradient">Technologies</span>
+              </h2>
+            </ParticleText>
+          </div>
           <p className="text-lg text-zinc-400">
             The tech stack I use to bring ideas to life.
           </p>

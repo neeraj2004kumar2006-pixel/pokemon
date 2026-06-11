@@ -14,9 +14,13 @@ export const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            About <ParticleText text="Me" />
-          </h2>
+          <div className="mb-6 inline-block">
+            <ParticleText>
+              <h2 className="text-3xl md:text-5xl font-bold text-white m-0">
+                About <span className="text-gradient">Me</span>
+              </h2>
+            </ParticleText>
+          </div>
           <div className="glass-card p-8 md:p-12 rounded-3xl space-y-6">
             <p className="text-lg md:text-xl text-zinc-300 leading-relaxed">
               I'm an independent app developer with a passion for building applications that people love to use. 
