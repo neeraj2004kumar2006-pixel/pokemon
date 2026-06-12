@@ -40,7 +40,7 @@ export const WebsitesSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto flex flex-col gap-12">
           {websites.map((site, index) => (
             <motion.div
               key={site.id}
@@ -56,7 +56,7 @@ export const WebsitesSection = () => {
                 <img 
                   src={site.image} 
                   alt={site.title}
-                  className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-[2rem] shadow-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 z-20"
+                  className="w-full h-full max-w-[200px] md:max-w-[280px] max-h-[200px] md:max-h-[280px] object-contain drop-shadow-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 z-20"
                 />
               </div>
               
