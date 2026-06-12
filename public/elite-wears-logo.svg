@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C158" />
+      <stop offset="50%" stop-color="#FDF0A6" />
+      <stop offset="100%" stop-color="#B8860B" />
+    </linearGradient>
+  </defs>
+  <!-- Background to make the logo pop if needed, but keeping it transparent is better -->
+  <rect width="400" height="150" fill="transparent"/>
+  
+  <text x="40" y="110" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="120" font-weight="300" fill="url(#goldGradient)">E</text>
+  <text x="140" y="105" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28" font-weight="400" fill="url(#goldGradient)" letter-spacing="12">W E A R S</text>
+</svg>

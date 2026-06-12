@@ -5,6 +5,14 @@ import { ExternalLink } from 'lucide-react';
 const websites = [
   {
     id: 1,
+    title: 'Elite Wears',
+    image: '/elite-wears-logo.svg',
+    description: 'A premium luxury fashion and apparel e-commerce platform. Features a modern, minimalist design with smooth animations and a focus on high-end user experience.',
+    tags: ['React', 'Tailwind CSS', 'E-commerce', 'Vite'],
+    demoUrl: 'https://elitewears-seven.vercel.app'
+  },
+  {
+    id: 2,
     title: 'Pokemon Portfolio',
     image: '/portfolio-logo.png',
     description: 'A premium, highly interactive personal portfolio website featuring 3D mouse parallax effects, glassmorphism, and a custom smooth-scrolling architecture. Fully responsive and beautifully animated.',
