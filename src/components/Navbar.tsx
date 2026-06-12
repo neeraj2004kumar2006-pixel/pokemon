@@ -39,14 +39,15 @@ export const Navbar = () => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
+            <a 
+              key={link.name} 
               href={link.href}
-              className="text-zinc-400 hover:text-white text-sm font-medium transition-colors"
+              className="nav-glitch-link"
             >
-              {link.name}
+              <span className="nav-glitch-bg"></span>
+              <span className="relative z-10 tracking-widest uppercase text-xs">{link.name}</span>
             </a>
           ))}
           <a
